@@ -4,6 +4,10 @@
     {
         static void Main(string[] args)
         {
+
+            // create a loop that only exits under certain conditions
+            // condense math functions to be DRY
+
             Console.WriteLine("Welcome! This is another boring ol calculator.\n" +
                 "Enter one of the following commands to make a calculation: \n" +
                 "Add, Sub, Div, Mult");
