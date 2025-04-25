@@ -5,9 +5,6 @@
         static void Main(string[] args)
         {
 
-            // create a loop that only exits under certain conditions
-            // condense math functions to be DRY
-
             bool isRunning = true;
             bool hasStartupMessageDisplayed = false;
 
@@ -21,29 +18,38 @@
                     hasStartupMessageDisplayed = true;
                 }
 
-                string input = Console.ReadLine() ?? "Add";
+                string input = Console.ReadLine();
                 string chosenCalc = string.IsNullOrWhiteSpace(input) ? "Add" : input;
+                int result = 0;
 
-                Console.WriteLine($"Great, let's {chosenCalc}!");
+                Console.WriteLine($"Great, let's {chosenCalc}!\n Please enter two numbers separated by a space.");
+
+                string numbers = Console.ReadLine();
+                string[] numbersCleaned = numbers.Split(" ");
+                int num1 = int.Parse(numbersCleaned[0]);
+                int num2 = int.Parse(numbersCleaned[1]);
+
                 if (chosenCalc == "Add")
                 {
-                    BasicMath.Add();
+                    result = BasicMath.Add(num1, num2);
                 }
                 else if (chosenCalc == "Sub")
                 {
-                    BasicMath.Subtract();
+                    result = BasicMath.Subtract(num1, num2);
                 }
                 else if (chosenCalc == "Div")
                 {
-                    Advanced.Divide();
+                    result = Advanced.Divide(num1, num2);
                 }
                 else if (chosenCalc == "Mult")
                 {
-                    Advanced.Multiply();
+                    result = Advanced.Multiply(num1, num2);
                 } else
                 {
                     Console.WriteLine("Invalid input, please try again");
                 }
+
+                Console.WriteLine($"The result is: {result}");
 
             }
             

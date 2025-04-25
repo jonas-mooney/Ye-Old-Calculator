@@ -8,25 +8,13 @@ namespace Ye_Old_Calculator
 {
     internal class Advanced
     {
-        public static int Divide()
+        public static int Divide(int num1, int num2)
         {
-            Console.WriteLine("Enter two numbers separated by a space: \n");
-            string numbers = Console.ReadLine();
-            string[] numbersCleaned = numbers.Split(" ");
-            int num1 = int.Parse(numbersCleaned[0]);
-            int num2 = int.Parse(numbersCleaned[1]);
-            Console.WriteLine($"The result is {num1 / num2}");
-            return 0;
+            return num1 / num2;
         }
-        public static int Multiply()
+        public static int Multiply(int num1, int num2)
         {
-            Console.WriteLine("Enter two numbers separated by a space: \n");
-            string numbers = Console.ReadLine();
-            string[] numbersCleaned = numbers.Split(" ");
-            int num1 = int.Parse(numbersCleaned[0]);
-            int num2 = int.Parse(numbersCleaned[1]);
-            Console.WriteLine($"The result is {num1 * num2}");
-            return 0;
+            return num1 * num2;
         }
     }
 }
